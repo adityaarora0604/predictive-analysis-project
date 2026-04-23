@@ -17,23 +17,23 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* ===============================
-   HIDE DEFAULT STREAMLIT UI
-================================= */
+/* ==========================================
+   HIDE DEFAULT STREAMLIT ELEMENTS
+========================================== */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* ===============================
+/* ==========================================
    MAIN BACKGROUND
-================================= */
+========================================== */
 .stApp {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-/* ===============================
+/* ==========================================
    SIDEBAR
-================================= */
+========================================== */
 [data-testid="stSidebar"] {
     background: linear-gradient(180deg, #f5f5f5 0%, #ececec 100%);
 }
@@ -43,12 +43,12 @@ header {visibility: hidden;}
 }
 
 [data-testid="stSidebar"] [role="radiogroup"] label {
-    background: rgba(255,255,255,0.70);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 6px 0;
+    background: rgba(255,255,255,0.72);
     border: 1px solid #e2e8f0;
-    transition: 0.3s;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 6px 0;
+    transition: 0.3s ease;
 }
 
 [data-testid="stSidebar"] [role="radiogroup"] label:hover {
@@ -57,57 +57,70 @@ header {visibility: hidden;}
     box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-/* ===============================
+/* ==========================================
    HEADINGS / TEXT
-================================= */
+========================================== */
 h1, h2, h3 {
-    color: #2d3748 !important;
+    color: #334155 !important;
     font-weight: 700 !important;
 }
 
 p, span, div, label {
-    color: #4a5568 !important;
+    color: #475569 !important;
 }
 
-/* ===============================
-   BUTTONS
-================================= */
+/* ==========================================
+   METRIC BLOCKS
+========================================== */
+[data-testid="metric-container"] {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+}
 
-/* Predict + Normal Buttons */
+/* ==========================================
+   SINGLE PREDICTION BUTTON
+========================================== */
 div.stButton > button {
-    background-color: #1e293b !important;
+    background: #1e293b !important;
     color: white !important;
-    border: 1px solid #1e293b !important;
+    border: none !important;
     border-radius: 10px !important;
     padding: 10px 24px !important;
-    font-weight: 600 !important;
-    transition: 0.3s ease !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
 }
 
 div.stButton > button:hover {
-    background-color: #334155 !important;
+    background: #334155 !important;
     color: white !important;
-    border: 1px solid #334155 !important;
+    transform: translateY(-1px);
 }
 
-/* Download Buttons */
+/* ==========================================
+   DOWNLOAD BUTTON
+========================================== */
 div.stDownloadButton > button {
-    background-color: #1e293b !important;
+    background: #1e293b !important;
     color: white !important;
-    border: 1px solid #1e293b !important;
+    border: none !important;
     border-radius: 10px !important;
-    padding: 10px 24px !important;
-    font-weight: 600 !important;
+    padding: 10px 22px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
 }
 
 div.stDownloadButton > button:hover {
-    background-color: #334155 !important;
+    background: #334155 !important;
     color: white !important;
 }
 
-/* ===============================
-   FILE UPLOADER (FIXED)
-================================= */
+/* ==========================================
+   FILE UPLOADER CONTAINER
+========================================== */
 section[data-testid="stFileUploader"] {
     background: white !important;
     border: 1px solid #d1d5db !important;
@@ -115,32 +128,42 @@ section[data-testid="stFileUploader"] {
     padding: 10px !important;
 }
 
+/* Upload Button */
 section[data-testid="stFileUploader"] button {
-    background-color: #f8fafc !important;
-    color: #1e293b !important;
-    border: 1px solid #cbd5e1 !important;
+    background: #1e293b !important;
+    color: white !important;
+    border: none !important;
     border-radius: 10px !important;
     padding: 10px 22px !important;
-    font-weight: 600 !important;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
 }
 
+/* Keep same on hover */
 section[data-testid="stFileUploader"] button:hover {
-    background-color: #f8fafc !important;
-    color: #1e293b !important;
-    border: 1px solid #cbd5e1 !important;
+    background: #334155 !important;
+    color: white !important;
 }
 
-/* Upload button text/icon */
+/* Upload icon + text */
 section[data-testid="stFileUploader"] button * {
-    color: #1e293b !important;
-    fill: #1e293b !important;
-    stroke: #1e293b !important;
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
 }
 
-/* ===============================
-   INPUT FIELDS
-================================= */
+/* 200MB text */
+section[data-testid="stFileUploader"] small,
+section[data-testid="stFileUploader"] span,
+section[data-testid="stFileUploader"] div {
+    color: #475569 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+/* ==========================================
+   INPUT BOXES
+========================================== */
 .stNumberInput input,
 .stTextInput input {
     background: white !important;
@@ -149,27 +172,27 @@ section[data-testid="stFileUploader"] button * {
     border-radius: 8px !important;
 }
 
-/* ===============================
-   SELECT BOX
-================================= */
+/* ==========================================
+   SELECTBOX
+========================================== */
 .stSelectbox div[data-baseweb="select"] {
     background: white !important;
     color: black !important;
     border-radius: 8px;
 }
 
-/* ===============================
-   DATAFRAME
-================================= */
+/* ==========================================
+   TABLE / DATAFRAME
+========================================== */
 .stDataFrame {
     background: white !important;
     border-radius: 12px;
     padding: 8px;
 }
 
-/* ===============================
-   ALERT / INFO BOX
-================================= */
+/* ==========================================
+   ALERTS
+========================================== */
 .stAlert {
     background: white !important;
     color: black !important;
@@ -177,18 +200,18 @@ section[data-testid="stFileUploader"] button * {
     border-radius: 10px;
 }
 
-/* ===============================
+/* ==========================================
    TABS
-================================= */
+========================================== */
 button[data-baseweb="tab"] {
     background: white !important;
     color: black !important;
     border-radius: 8px 8px 0 0;
 }
 
-/* ===============================
+/* ==========================================
    EXPANDER
-================================= */
+========================================== */
 .streamlit-expanderHeader {
     background: white !important;
     color: black !important;
@@ -197,7 +220,6 @@ button[data-baseweb="tab"] {
 
 </style>
 """, unsafe_allow_html=True)
-
 # LOAD MODELS AND SCALERS
 
 @st.cache_resource
