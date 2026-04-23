@@ -5,7 +5,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Page Configuration
+# Page Configuring
 st.set_page_config(
     page_title="Library Analytics Dashboard",
     page_icon="📚",
