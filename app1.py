@@ -488,8 +488,31 @@ elif page == "🔮 Single Prediction":
 
 elif page == "📁 Bulk Prediction":
     st.title("📁 Bulk Library Prediction")
-    uploaded = st.file_uploader("Upload CSV")
-
+    st.markdown("### Download Sample Input File")
+    sample_df = pd.DataFrame({
+    "Population of Service Area":[15000],
+    "Total Library Visits":[42000],
+    "Total Programs (Synchronous + Prerecorded)":[180],
+    "Total Program Attendance & Views":[5200],
+    "Total Collection":[25000],
+    "Wages & Salaries Expenditures":[180000],
+    "Library Materials Expenditures":[35000],
+    "Town Tax Appropriation for Library":[290000],
+    "Tax Appropriation Per Capita Served":[19.3]
+    })
+    csv = sample_df.to_csv(index=False).encode("utf-8")
+    st.download_button(
+    label="📥 Download Sample CSV",
+    data=csv,
+    file_name="sample_library_data.csv",
+    mime="text/csv"
+    )
+    st.markdown("---")
+    st.info("File must contain same columns as sample template.")
+    uploaded = st.file_uploader(
+    "Upload CSV File",
+    type=["csv","xlsx"]
+    )
     if uploaded and models_loaded:
         try:
             df = pd.read_csv(uploaded)
