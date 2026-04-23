@@ -26,7 +26,29 @@ div.stButton > button {
     font-weight: 600 !important;
     transition: 0.3s ease !important;
 }
+/* File uploader button */
+section[data-testid="stFileUploader"] button {
+    background-color: #1e293b !important;
+    color: white !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    padding: 10px 22px !important;
+}
 
+/* Hover */
+section[data-testid="stFileUploader"] button:hover {
+    background-color: #334155 !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+}
+
+/* FORCE text inside upload button */
+section[data-testid="stFileUploader"] button * {
+    color: white !important;
+    fill: white !important;
+    stroke: white !important;
+}
 /* Download Buttons */
 div.stDownloadButton > button {
     background-color: #1e293b !important;
@@ -35,6 +57,17 @@ div.stDownloadButton > button {
     border-radius: 10px !important;
     padding: 10px 24px !important;
     font-weight: 600 !important;
+}
+/* Force visible label */
+section[data-testid="stFileUploader"] button span {
+    color: white !important;
+}
+
+/* Entire upload area */
+section[data-testid="stFileUploader"] {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 8px !important;
 }
 
 div.stDownloadButton > button:hover {
