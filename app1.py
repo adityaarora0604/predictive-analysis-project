@@ -16,45 +16,158 @@ st.set_page_config(
 # Custom CSS (unchanged)
 st.markdown("""
     <style>
+
+    /* Hide Streamlit default items */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
+
+    /* Main App Background */
     .stApp {
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
+
+    /* Sidebar */
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #f5f5f5 0%, #ececec 100%);
     }
-    [data-testid="stSidebar"] * { color: #2d3748 !important; }
+
+    [data-testid="stSidebar"] * {
+        color: #2d3748 !important;
+    }
+
     [data-testid="stSidebar"] [role="radiogroup"] label {
-        background: rgba(255,255,255,0.5);
-        padding: 10px; border-radius: 8px; margin: 5px 0;
+        background: rgba(255,255,255,0.65);
+        padding: 10px;
+        border-radius: 10px;
+        margin: 6px 0;
         transition: 0.3s;
+        border: 1px solid #e2e8f0;
     }
+
     [data-testid="stSidebar"] [role="radiogroup"] label:hover {
-        background: rgba(255,255,255,0.9);
+        background: white;
         transform: translateX(5px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
     }
-    h1, h2, h3 { color: #2d3748 !important; font-weight: 700 !important; }
-    p, span, div, label { color: #4a5568 !important; }
+
+    /* Headings */
+    h1, h2, h3 {
+        color: #2d3748 !important;
+        font-weight: 700 !important;
+    }
+
+    /* Text */
+    p, span, div, label {
+        color: #4a5568 !important;
+    }
+
+    /* Metric Cards */
     .metric-card {
-        background: rgba(255,255,255,0.8);
+        background: rgba(255,255,255,0.92);
         backdrop-filter: blur(10px);
-        border-radius: 15px; padding: 20px;
-        border: 1px solid rgba(200,200,200,0.3);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(220,220,220,0.6);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
-    .stButton>button {
-        background: linear-gradient(90deg,#4299e1 0%,#3182ce 100%);
-        color: white; border: none; border-radius: 10px;
-        padding: 10px 25px; font-weight: 600;
+
+    /* Normal Buttons */
+    .stButton > button {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 10px;
+        padding: 10px 24px;
+        font-weight: 600;
         transition: 0.3s;
     }
-    .stButton>button:hover {
-        background: linear-gradient(90deg,#3182ce 0%,#2c5282 100%);
+
+    .stButton > button:hover {
+        background: #f1f5f9 !important;
+        color: black !important;
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(66,153,225,0.4);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
+
+    /* Download Buttons */
+    .stDownloadButton > button {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 10px;
+        padding: 10px 24px;
+        font-weight: 600;
+    }
+
+    .stDownloadButton > button:hover {
+        background: #f8fafc !important;
+        color: black !important;
+    }
+
+    /* Number Inputs */
+    .stNumberInput input {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 8px !important;
+    }
+
+    /* Text Inputs */
+    .stTextInput input {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #d1d5db !important;
+    }
+
+    /* Selectbox */
+    .stSelectbox div[data-baseweb="select"] {
+        background: white !important;
+        color: black !important;
+        border-radius: 8px;
+    }
+
+    /* File Uploader */
+    [data-testid="stFileUploader"] section {
+        background: white !important;
+        color: black !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 12px !important;
+    }
+
+    [data-testid="stFileUploader"] * {
+        color: black !important;
+    }
+
+    /* Dataframe */
+    .stDataFrame {
+        background: white !important;
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    /* Alerts / Info Box */
+    .stAlert {
+        background: #ffffff !important;
+        color: black !important;
+        border: 1px solid #dbeafe !important;
+        border-radius: 10px;
+    }
+
+    /* Tabs */
+    button[data-baseweb="tab"] {
+        background: white !important;
+        color: black !important;
+        border-radius: 8px 8px 0 0;
+    }
+
+    /* Expander */
+    .streamlit-expanderHeader {
+        background: white !important;
+        color: black !important;
+        border-radius: 8px;
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
