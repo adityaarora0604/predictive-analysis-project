@@ -16,7 +16,62 @@ st.set_page_config(
 # Custom CSS (unchanged)
 st.markdown("""
     <style>
+    /* Normal Buttons (Predict etc.) */
+div.stButton > button {
+    background-color: #1e293b !important;
+    color: white !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    transition: 0.3s ease !important;
+}
 
+/* Download Buttons */
+div.stDownloadButton > button {
+    background-color: #1e293b !important;
+    color: white !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+}
+
+div.stDownloadButton > button:hover {
+    background-color: #334155 !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+}
+
+/* Upload Button */
+section[data-testid="stFileUploader"] button {
+    background-color: #1e293b !important;
+    color: white !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+section[data-testid="stFileUploader"] button:hover {
+    background-color: #334155 !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+}
+
+/* Force text/icons white inside buttons */
+button p,
+button span,
+button div,
+button svg {
+    color: white !important;
+    fill: white !important;
+}
+
+div.stButton > button:hover {
+    background-color: #334155 !important;
+    color: white !important;
+    border: 1px solid #334155 !important;
+}
     /* Hide Streamlit default items */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
