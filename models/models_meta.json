@@ -1,0 +1,34 @@
+{
+  "scalers": {
+    "circulation": "models/scaler_circ.pkl",
+    "income": "models/scaler_income.pkl"
+  },
+  "models": {
+    "rf_circulation": "models/rf_circulation.pkl",
+    "rf_income": "models/rf_income.pkl"
+  },
+  "feature_lists": {
+    "features_circ": [
+      "Population of Service Area",
+      "Total Library Visits",
+      "Total Programs (Synchronous + Prerecorded)",
+      "Total Program Attendance & Views",
+      "Total Collection",
+      "Operating Expenditures",
+      "Wages & Salaries Expenditures",
+      "Library Materials Expenditures",
+      "Town Tax Appropriation for Library"
+    ],
+    "features_income": [
+      "Population of Service Area",
+      "Total Library Visits",
+      "Total Circulation",
+      "Total Programs (Synchronous + Prerecorded)",
+      "Total Program Attendance & Views",
+      "Total Collection",
+      "Wages & Salaries Expenditures",
+      "Library Materials Expenditures",
+      "Town Tax Appropriation for Library"
+    ]
+  }
+}

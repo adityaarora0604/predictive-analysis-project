@@ -1,0 +1,24 @@
+{
+  "features_circ": [
+    "Population of Service Area",
+    "Total Library Visits",
+    "Total Programs (Synchronous + Prerecorded)",
+    "Total Program Attendance & Views",
+    "Total Collection",
+    "Operating Expenditures",
+    "Wages & Salaries Expenditures",
+    "Library Materials Expenditures",
+    "Town Tax Appropriation for Library"
+  ],
+  "features_income": [
+    "Population of Service Area",
+    "Total Library Visits",
+    "Total Circulation",
+    "Total Programs (Synchronous + Prerecorded)",
+    "Total Program Attendance & Views",
+    "Total Collection",
+    "Wages & Salaries Expenditures",
+    "Library Materials Expenditures",
+    "Town Tax Appropriation for Library"
+  ]
+}
