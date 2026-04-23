@@ -16,6 +16,42 @@ st.set_page_config(
 # Custom CSS (unchanged)
 st.markdown("""
     <style>
+
+    /* ===============================
+   FILE UPLOADER BUTTON - HOVER STYLE ALWAYS
+================================= */
+
+section[data-testid="stFileUploader"] button {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    padding: 10px 22px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+}
+
+/* Keep same on hover */
+section[data-testid="stFileUploader"] button:hover {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+/* Force text/icon dark */
+section[data-testid="stFileUploader"] button * {
+    color: #1e293b !important;
+    fill: #1e293b !important;
+    stroke: #1e293b !important;
+}
+
+/* Upload area */
+section[data-testid="stFileUploader"] {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 8px !important;
+}
+
     /* Normal Buttons (Predict etc.) */
 div.stButton > button {
     background-color: #1e293b !important;
